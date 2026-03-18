@@ -33,7 +33,10 @@ def display_processes():
             pass
 
    
-    processes = sorted(processes, key=lambda x: x['cpu_percent'], reverse=True)
+    def get_cpu(x):
+        return x['cpu_percent']
+
+    processes = sorted(processes, key=get_cpu, reverse=True)
 
     print("PID     NAME                CPU%")
     print("-----------------------------------")
@@ -42,7 +45,7 @@ def display_processes():
         print(f"{p['pid']:<7} {p['name'][:18]:<18} {p['cpu_percent']:<5}")
 
 while True:
-    os.system('clear')  # clears screen
+    os.system('clear')  
 
     cpu = psutil.cpu_percent()
     mem = psutil.virtual_memory().percent
