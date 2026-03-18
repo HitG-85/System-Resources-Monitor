@@ -19,7 +19,7 @@ The application updates continuously in the terminal to provide a live view of s
 
 ---
 
-## ⚙️ How to Run
+# How to Run
 
 1. Install psutil: pip install psutil
 2. Run the code: python3 monitor.py
